@@ -1,2 +1,2 @@
 # react-socket.io
-react socket.io provider component, passing the socket to children using props
+react socket.io provider Higher Order Component, passing the socket to children

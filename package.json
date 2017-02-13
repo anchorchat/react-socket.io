@@ -1,7 +1,7 @@
 {
   "name": "react-socket.io",
   "version": "1.0.0",
-  "description": "react socket.io provider component, passing the socket to children using props",
+  "description": "react socket.io provider Higher Order Component, passing the socket to children",
   "main": "dist/index.js",
   "files": [
     "/*"
@@ -24,7 +24,7 @@
     "socket.io",
     "provider"
   ],
-  "author": "Sjaak Luthart",
+  "author": "Anchor.Chat",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/anchorchat/react-socket.io/issues"
@@ -46,7 +46,8 @@
   },
   "peerDependencies": {
     "react": "^15.4.1",
-    "socket.io-client": "^1.7.2"
+    "socket.io-client": "^1.7.2",
+    "underscore": "^1.8.3"
   },
   "babel": {
     "presets": [
