@@ -1,0 +1,61 @@
+{
+  "name": "react-socket.io",
+  "version": "1.0.0",
+  "description": "react socket.io provider component, passing the socket to children using props",
+  "main": "dist/index.js",
+  "files": [
+    "/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel -d dist/ -w src/",
+    "compile": "rm -rf dist && babel -d dist/ src/",
+    "lint": "eslint src/*",
+    "copy": "cp -rf package.json README.md dist",
+    "build": "npm run compile && npm run copy",
+    "dist": "cd dist && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchorchat/react-socket.io.git"
+  },
+  "keywords": [
+    "react",
+    "socket.io",
+    "provider"
+  ],
+  "author": "Sjaak Luthart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anchorchat/react-socket.io/issues"
+  },
+  "homepage": "https://github.com/anchorchat/react-socket.io#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.1",
+    "socket.io-client": "^1.7.2"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  }
+}
