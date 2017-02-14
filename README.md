@@ -34,8 +34,8 @@ ReactDOM.render(
 In App the following props are now exposed:
 ```javascript
 socket
-addSocketEvent,
-emitSocketEvent,
+addSocketEvent
+emitSocketEvent
 removeSocketEvents
 ```
 
@@ -65,7 +65,7 @@ onConnectEvents: [
 ```
 
 #### onDisconnectEvents
-Specify what functions should be run when a socket connection is made.
+Specify what functions should be run when a socket is disconnected.
 ```javascript
 onDisconnectEvents: [
   store.dispatch(userLogoutClient()),
@@ -108,16 +108,6 @@ $ npm run watch
 ```
 
 Babel will compile `./src` on changes.
-
-### examples
-
-To start the webpack server run:
-
-```bash
-$ cd examples && npm run start
-```
-
-Webpack wil compile on changes in `./examples/src`.
 
 ## License
 
