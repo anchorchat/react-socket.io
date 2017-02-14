@@ -1,6 +1,6 @@
 {
   "name": "react-socket.io",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react socket.io provider Higher Order Component, passing the socket to children",
   "main": "dist/index.js",
   "files": [
