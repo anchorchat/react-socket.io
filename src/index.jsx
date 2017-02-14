@@ -199,6 +199,7 @@ export default function socketProvider(ChildComponent, options) {
           socket={this.socket}
           addSocketEvent={this.addSocketEvent}
           removeSocketEvents={this.removeSocketEvents}
+          emitSocketEvent={this.emitSocketEvent}
         />
       );
     }
