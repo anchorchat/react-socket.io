@@ -41,6 +41,7 @@ export default function socketProvider(ChildComponent, options) {
 
       // State doesnt work with this array somehow.
       this.events = {};
+      this.initialEvents = {};
       this.socket = false;
 
       // TODO add remove single socket event
@@ -90,11 +91,12 @@ export default function socketProvider(ChildComponent, options) {
       });
       socket.on('disconnect', () => this.setState({ connected: false }));
 
+      // TODO add checks for each event if it is the right format.
       if (options && options.initialSocketEvents && options.initialSocketEvents.length > 0) {
         _.each(options.initialSocketEvents, (event) => {
           switch (event.type) {
             case 'on':
-              return this.addSocketEvent(event.name, () => event.callback(socket));
+              return this.addSocketEvent(event.name, () => event.callback(socket), true);
             case 'off':
               return this.removeSocketEvent(event.name, event.callback);
             case 'emit':
@@ -153,19 +155,22 @@ export default function socketProvider(ChildComponent, options) {
       this.socket.emit(event, callback);
     }
 
-    addSocketEvent(event, callback) {
+    addSocketEvent(event, callback, initial) {
       if (!_.has(this.events, event)) {
         this.socket.on(event, callback);
 
         const newEvent = { [event]: callback };
-        this.events = _.extend(this.events, newEvent);
+        if (initial && !_.has(this.initialEvents, event)) {
+          this.initialEvents = _.extend(this.initialEvents, newEvent);
+        } else {
+          this.events = _.extend(this.events, newEvent);
+        }
       }
     }
 
     removeSocketEvents() {
       if (this.socket) {
         _.each(this.events, (callback, event) => {
-          console.log(`this.socket.off(${event})`);
           this.socket.off(event, callback);
         });
       }
