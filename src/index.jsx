@@ -3,19 +3,6 @@ import io from 'socket.io-client';
 import _ from 'underscore';
 
 export default function socketProvider(ChildComponent, options) {
-  // options argument with the following arguments:
-  // url: <socketUrl>
-  // ioOptions: ObjectOf(<socketOptions>)
-  // initialSocketEvents: ArrayOf(<events>)
-  //   events: {
-  //     type: on/emit/off
-  //     name: <eventName>
-  //     callback: <function>,
-  //     options: <Object>
-  //   }
-  // onConnectEvents: ArrayOf(<events>)
-  // onDisconnectEvents: ArrayOf(<events>)
-  // loadingComponent: Node
   return class ComponentWithSocket extends Component {
     static runCustomEvents(events) {
       if (events && events.length > 0) {
